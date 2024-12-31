@@ -19,3 +19,6 @@
   border-right: 0px;
   border-bottom: 0px;
 }
+.disable-board {
+  opacity: 0.8;
+}
