@@ -1,5 +1,11 @@
+import { useState } from "react";
 import Board from "./Board";
 const Game = () => {
+  const [xTurn, setTurn] = useState(true);
+  const [miniBoard, setMiniBoard] = useState(Array(9).fill(null));
+  function changeTurn(data) {
+    setTurn(data);
+  }
   return (
     <div className="bg-gray-50 py-10 sm:py-10">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
@@ -14,7 +20,10 @@ const Game = () => {
               </button>
 
               <h2 className=" mt-2 text-center text-base/7 font-semibold text-indigo-600">
-                Next Player <span className="text-gray-800 font-bold">: X</span>
+                Next Player{" "}
+                <span className="text-gray-800 font-bold">
+                  : {xTurn ? "X" : "O"}
+                </span>
               </h2>
             </div>
             <div className="pointer-events-none absolute inset-px shadow ring-1 ring-black/5 lg:rounded-[5px]"></div>
@@ -24,7 +33,11 @@ const Game = () => {
           <div className="relative lg:row-span-2">
             <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
-              <Board />
+              <Board
+                xTurn={xTurn}
+                miniBoard={miniBoard}
+                onTurnChange={changeTurn}
+              />
             </div>
           </div>
         </div>
