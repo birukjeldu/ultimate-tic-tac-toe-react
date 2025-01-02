@@ -7,7 +7,7 @@ const Square = ({
 }) => {
   return (
     <div
-      className={`${className} w-14 h-14 p-4 border-gray-300`}
+      className={`${className} w-14 h-14 p-4 border-gray-400 cursor-pointer`}
       onClick={handleSqrClick}
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverLeave}
