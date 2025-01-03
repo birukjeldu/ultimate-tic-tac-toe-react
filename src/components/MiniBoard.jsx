@@ -15,7 +15,6 @@ const MiniBoard = ({
       onSquareUpdate(i, val);
       onTurnChange(!xTurn);
       updateIndex(i);
-      console.log(square);
     }
   };
 

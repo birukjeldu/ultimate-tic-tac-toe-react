@@ -14,15 +14,10 @@ const Game = () => {
         </p>
         <div className="relative flex justify-center lg:grid-cols-2  mx-auto max-w-7xl mt-6 ">
           <div className="relative flex h-full flex-col overflow-hidden">
-            <div className="p-4 px-10 flex gap-10 justify-evenly">
-              <button className="mt-2 text-center text-base/7 font-semibold text-green-600">
-                New Game
-              </button>
-
-              <h2 className=" mt-2 text-center text-base/7 font-semibold text-indigo-600">
-                Next Player{" "}
-                <span className="text-gray-800 font-bold">
-                  : {xTurn ? "X" : "O"}
+            <div className="p-3 px-10 flex gap-6 justify-evenly shadow-xl">
+              <h2 className=" mt-2 text-center text-lg font-bold text-indigo-600">
+                <span className="text-gray-950 text-3xl font-bold">
+                  {xTurn ? "X" : "O"}
                 </span>
               </h2>
             </div>
