@@ -1,16 +1,26 @@
 import { useState } from "react";
 import Square from "./Square";
 
-const MiniBoard = ({ xTurn, onTurnChange, updateIndex, hoverUpdateIndex }) => {
-  const [square, setSquare] = useState(Array(9).fill(null));
-
+const MiniBoard = ({
+  xTurn,
+  square,
+  onTurnChange,
+  updateIndex,
+  onSquareUpdate,
+  hoverUpdateIndex,
+}) => {
   const sqrClick = (i) => {
     if (square[i] == null) {
-      xTurn ? (square[i] = "X") : (square[i] = "O");
+      let val = xTurn ? "X" : "O";
+      onSquareUpdate(i, val);
       onTurnChange(!xTurn);
       updateIndex(i);
+      console.log(square);
     }
   };
+
+  //let winner = calculateWinner(square);
+
   return (
     <div className="grid grid-cols-3 p-2 border-0 border-red-900 align-middle text-gray-900 text-xl font-bold">
       <Square
